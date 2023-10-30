@@ -1,3 +1,4 @@
+import styles from "./navbar.module.css";
 import Link from "next/link";
 
 const links = [
@@ -37,6 +38,14 @@ const Navbar = () => {
   return (
     <>
       <Link href="/">Blog App</Link>
+      <div className="links">
+        {links.map((link) => (
+          <Link key={link.id} href={link.url}>
+            {link.title}
+          </Link>
+        ))}
+      </div>
+      <button>Logout</button>
     </>
   );
 };

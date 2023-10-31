@@ -2,20 +2,23 @@ import styles from "./page.module.css";
 import { items } from "./data.js";
 import Button from "@/components/button/Button";
 import Image from "next/image";
-// import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 
-// const getData = (category) => {
-//   const data = items[category];
-//   data ? data : notFound();
-// };
+const getData = (category) => {
+  const data = items[category];
+  if (data) {
+    return data;
+  }
+  return notFound();
+};
 
 const Category = ({ params }) => {
-  // const data = getData(params.category);
+  const data = getData(params.category);
 
   return (
     <>
       <h1 className={styles.catTitle}>{params.category}</h1>
-      {items[params.category].map((item) => (
+      {data.map((item) => (
         <div className={styles.item} key={item.id}>
           <div className={styles.content}>
             <h1 className={styles.title}>{item.title}</h1>

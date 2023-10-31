@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 async function getData() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -8,7 +9,7 @@ async function getData() {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return notFound();
   }
 
   return res.json();

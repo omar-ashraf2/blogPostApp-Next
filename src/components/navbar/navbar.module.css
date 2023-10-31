@@ -1,3 +1,29 @@
 .container {
-  background-color: aliceblue;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.link {
+}
+.logout {
+  border: none;
+  padding: 7px;
+  background-color: #c03636;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+}
+.login {
+  background-color: #53c28b;
 }

@@ -1,8 +1,7 @@
+import styles from "./page.module.css";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  return <div className={styles.container}>Home</div>;
+};
 
-export default Home
+export default Home;

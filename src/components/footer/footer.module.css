@@ -1,3 +1,18 @@
 .container {
-  background-color: aliceblue;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.iconLink img {
+  opacity: 0.6;
+}
+.iconLink:hover img {
+  opacity: 1;
 }

@@ -1,3 +1,4 @@
+import Theme from "../theme/Theme";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 
@@ -41,6 +42,7 @@ const Navbar = () => {
         Blog App
       </Link>
       <div className={styles.links}>
+      <Theme />
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}

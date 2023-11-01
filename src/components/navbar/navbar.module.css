@@ -13,16 +13,16 @@
   align-items: center;
   gap: 20px;
 }
-.link {
-}
-.logout {
+.btn {
   border: none;
   padding: 7px;
-  background-color: #c03636;
   cursor: pointer;
   font-weight: bold;
   color: white;
   border-radius: 8px;
+}
+.logout {
+  background-color: #c03636;
 }
 .login {
   background-color: #53c28b;

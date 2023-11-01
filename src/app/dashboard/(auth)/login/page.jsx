@@ -17,13 +17,16 @@ const Login = ({ url }) => {
     setSuccess(params.get("success"));
   }, [params]);
 
-  if (session.status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (session.status === "authenticated") {
-    router?.push("/dashboard");
-  }
+  useEffect(() => {
+    if (session.status === "loading") {
+      return () => {
+        <p>Loading...</p>;
+      };
+    }
+    if (session.status === "authenticated") {
+      router?.push("/dashboard");
+    }
+  }, [router, session.status]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

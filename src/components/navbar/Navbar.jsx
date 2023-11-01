@@ -4,6 +4,7 @@ import Theme from "../theme/Theme";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 
+
 const links = [
   {
     id: 1,
@@ -39,6 +40,7 @@ const links = [
 
 const Navbar = () => {
   const session = useSession();
+
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
@@ -60,9 +62,11 @@ const Navbar = () => {
             Logout
           </button>
         ) : (
-          <button className={styles.btn + " " + styles.login} onClick={signIn}>
-            Login/Register
-          </button>
+          <p
+            className={styles.login}
+          >
+            ⬅️ Login/Register
+          </p>
         )}
       </div>
     </div>

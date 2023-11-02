@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/posts", {
@@ -9,7 +8,7 @@ async function getData() {
   });
 
   if (!res.ok) {
-    return notFound();
+    throw new Error("Failed to fetch data");
   }
 
   return res.json();
@@ -23,7 +22,7 @@ const Blog = async () => {
         <Link
           href={`/blog/${item._id}`}
           className={styles.container}
-          key={item._id}
+          key={item.id}
         >
           <div className={styles.imageContainer}>
             <Image

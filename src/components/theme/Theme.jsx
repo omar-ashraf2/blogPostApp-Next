@@ -4,7 +4,6 @@ import React, { useContext } from "react";
 import styles from "./theme.module.css";
 import { ThemeContext } from "@/context/ThemeContext";
 
-
 const Theme = () => {
   const { toggle, mode } = useContext(ThemeContext);
   return (

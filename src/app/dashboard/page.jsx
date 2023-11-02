@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import useSWR from "swr";
 import styles from "./page.module.css";
 import { useSession } from "next-auth/react";
@@ -66,46 +66,48 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className={styles.container}>
-        <div className={styles.posts}>
-          {isLoading
-            ? "loading"
-            : data?.map((post) => (
-                <div className={styles.post} key={post._id}>
-                  <div className={styles.imgContainer}>
-                    <Image
-                      src={post.img}
-                      alt=""
-                      width={200}
-                      height={100}
-                      sizes="100%"
-                      priority
-                    />
+      <Suspense>
+        <div className={styles.container}>
+          <div className={styles.posts}>
+            {isLoading
+              ? "loading"
+              : data?.map((post) => (
+                  <div className={styles.post} key={post._id}>
+                    <div className={styles.imgContainer}>
+                      <Image
+                        src={post.img}
+                        alt=""
+                        width={200}
+                        height={100}
+                        sizes="100%"
+                        priority
+                      />
+                    </div>
+                    <h2 className={styles.postTitle}>{post.title}</h2>
+                    <button
+                      className={styles.delete}
+                      onClick={() => handleDelete(post._id)}
+                    >
+                      X
+                    </button>
                   </div>
-                  <h2 className={styles.postTitle}>{post.title}</h2>
-                  <button
-                    className={styles.delete}
-                    onClick={() => handleDelete(post._id)}
-                  >
-                    X
-                  </button>
-                </div>
-              ))}
+                ))}
+          </div>
+          <form className={styles.new} onSubmit={handleSubmit}>
+            <h1>Add New Post</h1>
+            <input type="text" placeholder="Title" className={styles.input} />
+            <input type="text" placeholder="Desc" className={styles.input} />
+            <input type="text" placeholder="Image" className={styles.input} />
+            <textarea
+              placeholder="Content"
+              className={styles.textArea}
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button className={styles.button}>Send</button>
+          </form>
         </div>
-        <form className={styles.new} onSubmit={handleSubmit}>
-          <h1>Add New Post</h1>
-          <input type="text" placeholder="Title" className={styles.input} />
-          <input type="text" placeholder="Desc" className={styles.input} />
-          <input type="text" placeholder="Image" className={styles.input} />
-          <textarea
-            placeholder="Content"
-            className={styles.textArea}
-            cols="30"
-            rows="10"
-          ></textarea>
-          <button className={styles.button}>Send</button>
-        </form>
-      </div>
+      </Suspense>
     );
   }
 };

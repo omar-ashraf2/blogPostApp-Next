@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import useSWR from "swr";
 import styles from "./page.module.css";
 import { useSession } from "next-auth/react";
@@ -14,20 +14,17 @@ const Dashboard = () => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, mutate, error, isLoading } = useSWR(
+  const { data, mutate, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
 
   useEffect(() => {
     if (session.status === "loading") {
-      return () => {
-        <p>Loading...</p>;
-      };
+      return;
     }
     if (session.status === "unauthenticated") {
       router?.push("/dashboard/login");
-      return;
     }
   }, [router, session.status]);
 
@@ -76,15 +73,22 @@ const Dashboard = () => {
             : data?.map((post) => (
                 <div className={styles.post} key={post._id}>
                   <div className={styles.imgContainer}>
-                    <Image src={post.img} alt="" width={200} height={100} />
+                    <Image
+                      src={post.img}
+                      alt=""
+                      width={200}
+                      height={100}
+                      sizes="100%"
+                      priority
+                    />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span
+                  <button
                     className={styles.delete}
                     onClick={() => handleDelete(post._id)}
                   >
                     X
-                  </span>
+                  </button>
                 </div>
               ))}
         </div>

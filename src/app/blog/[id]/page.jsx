@@ -37,12 +37,21 @@ const BlogPost = async ({ params }) => {
               width={40}
               height={40}
               className={styles.avatar}
+              sizes="100%"
+              priority
             />
             <span className={styles.username}>{data.username}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={data.img} alt="" fill={true} className={styles.image} />
+          <Image
+            src={data.img}
+            alt=""
+            fill={true}
+            sizes="100%"
+            priority
+            className={styles.image}
+          />
         </div>
       </div>
       <div className={styles.content}>

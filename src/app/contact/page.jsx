@@ -14,6 +14,8 @@ const Contact = () => {
             alt="ContactImg"
             fill={true}
             className={styles.image}
+            sizes="100%"
+            priority
           />
         </div>
         <form className={styles.form}>

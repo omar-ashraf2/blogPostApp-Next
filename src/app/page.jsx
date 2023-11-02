@@ -17,7 +17,7 @@ const Home = () => {
         <Button url="/portfolio" text="See Our Works" />
       </div>
       <div className={styles.item}>
-        <Image src={Hero} alt="Hero" className={styles.img} />
+        <Image src={Hero} alt="Hero" priority className={styles.img} />
       </div>
     </div>
   );

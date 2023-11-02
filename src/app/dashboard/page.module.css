@@ -27,9 +27,6 @@
 .delete {
   cursor: pointer;
   color: red;
-  padding: 5px;
-  border: none;
-  background-color: transparent;
 }
 
 .new {

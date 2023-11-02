@@ -1,22 +1,24 @@
+import React from "react";
 import styles from "./page.module.css";
-import { items } from "./data.js";
-import Button from "@/components/button/Button";
+import Button from "@/components/Button/Button";
 import Image from "next/image";
+import { items } from "./data.js";
 import { notFound } from "next/navigation";
 
-const getData = (category) => {
-  const data = items[category];
+const getData = (cat) => {
+  const data = items[cat];
+
   if (data) {
     return data;
   }
+
   return notFound();
 };
 
 const Category = ({ params }) => {
   const data = getData(params.category);
-
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.catTitle}>{params.category}</h1>
       {data.map((item) => (
         <div className={styles.item} key={item.id}>
@@ -28,8 +30,6 @@ const Category = ({ params }) => {
           <div className={styles.imgContainer}>
             <Image
               className={styles.img}
-              sizes="100%"
-              priority
               fill={true}
               src={item.image}
               alt=""
@@ -37,7 +37,7 @@ const Category = ({ params }) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

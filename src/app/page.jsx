@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Hero from "public/hero.png";
-import Button from "@/components/button/Button";
+import Button from "@/components/Button/Button";
 
-const Home = () => {
+export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -14,13 +14,11 @@ const Home = () => {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <Button url="/portfolio" text="See Our Works" />
+        <Button url="/portfolio" text="See Our Works"/>
       </div>
       <div className={styles.item}>
-        <Image src={Hero} alt="Hero" priority className={styles.img} />
+        <Image src={Hero} alt="" className={styles.img} />
       </div>
     </div>
   );
-};
-
-export default Home;
+}

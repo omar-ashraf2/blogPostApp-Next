@@ -20,7 +20,7 @@ export const items = {
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
       image:
         "https://images.pexels.com/photos/2916450/pexels-photo-2916450.jpeg",
-    },
+    }
   ],
   illustrations: [
     {
@@ -43,7 +43,7 @@ export const items = {
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
       image:
         "https://images.pexels.com/photos/2916450/pexels-photo-2916450.jpeg",
-    },
+    }
   ],
   websites: [
     {
@@ -66,23 +66,6 @@ export const items = {
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
       image:
         "https://images.pexels.com/photos/2916450/pexels-photo-2916450.jpeg",
-    },
+    }
   ],
 };
-export const portfolioItems = [
-  {
-    url: "/portfolio/illustrations",
-    text: "Illustrations",
-    img: "/illustration.png",
-  },
-  {
-    url: "/portfolio/websites",
-    text: "Website",
-    img: "/websites.jpg",
-  },
-  {
-    url: "/portfolio/applications",
-    text: "Application",
-    img: "/apps.jpg",
-  },
-];

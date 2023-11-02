@@ -1,9 +1,10 @@
 "use client";
-import { signIn, signOut, useSession } from "next-auth/react";
-import Theme from "../theme/Theme";
-import styles from "./navbar.module.css";
-import Link from "next/link";
 
+import Link from "next/link";
+import React from "react";
+import styles from "./navbar.module.css";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { signOut, useSession } from "next-auth/react";
 
 const links = [
   {
@@ -44,29 +45,19 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
-        Blog App
+        lamamia
       </Link>
       <div className={styles.links}>
-        <Theme />
+        <DarkModeToggle />
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))}
-
-        {session.status === "authenticated" ? (
-          <button
-            className={styles.btn + " " + styles.logout}
-            onClick={signOut}
-          >
+        {session.status === "authenticated" && (
+          <button className={styles.logout} onClick={signOut}>
             Logout
           </button>
-        ) : (
-          <p
-            className={styles.login}
-          >
-            ⬅️ Login/Register
-          </p>
         )}
       </div>
     </div>

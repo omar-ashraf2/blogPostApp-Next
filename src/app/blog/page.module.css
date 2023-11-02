@@ -5,16 +5,18 @@
   margin-bottom: 50px;
 }
 
-.image {
+.image{
   object-fit: cover;
-  border-radius: 8px;
 }
 
-.title {
+.content {
+}
+
+.title{
   margin-bottom: 10px;
 }
 
-.desc {
+.desc{
   font-size: 18px;
   color: #999;
 }

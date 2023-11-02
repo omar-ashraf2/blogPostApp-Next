@@ -1,17 +1,15 @@
-import { Inter } from "next/font/google";
+import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
+import { Inter, Roboto, Poppins } from "next/font/google";
+import Footer from "@/components/footer/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
-import AuthProvider from "@/components/authProvider/AuthProvider";
-import { Suspense } from "react";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Blog App Next.js",
-  description:
-    "A Next.js blog post app is a high-performance, SEO-friendly platform for creating and managing blog content. It features server-side rendering, efficient routing, and responsive design. With dynamic content, authentication, and customizability, it provides a seamless blogging experience.",
+  title: "Lama Dev",
+  description: "This is the description",
 };
 
 export default function RootLayout({ children }) {
@@ -21,10 +19,8 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <AuthProvider>
             <div className="container">
-              <Suspense>
-                <Navbar />
-                {children}
-              </Suspense>
+              <Navbar />
+              {children}
               <Footer />
             </div>
           </AuthProvider>

@@ -1,13 +1,18 @@
-import Image from "next/image";
+import React from "react";
 import styles from "./page.module.css";
-import aboutImg from "public/meeting.jpeg";
-import Button from "@/components/button/Button";
+import Image from "next/image";
+import Button from "@/components/Button/Button";
 
 const About = () => {
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image src={aboutImg} fill={true} alt="about" className={styles.img} />
+        <Image
+          src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          fill={true}
+          alt=""
+          className={styles.img}
+        />
         <div className={styles.imgText}>
           <h1 className={styles.imgTitle}>Digital Storytellers</h1>
           <h2 className={styles.imgDesc}>
@@ -51,7 +56,7 @@ const About = () => {
           <Button url="/contact" text="Contact" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

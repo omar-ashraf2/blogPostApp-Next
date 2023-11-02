@@ -1,21 +1,24 @@
-import Image from "next/image";
+import React from "react";
 import styles from "./page.module.css";
-import ContactImg from "public/contact.png";
-import Button from "@/components/button/Button";
+import Image from "next/image";
+import Button from "@/components/Button/Button";
+
+export const metadata = {
+  title: "Lama Dev Contact Information",
+  description: "This is Contact Page",
+};
 
 const Contact = () => {
   return (
-    <>
-      <h1 className={styles.title}>Let&apos;s Keep in Touch</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Let's Keep in Touch</h1>
       <div className={styles.content}>
         <div className={styles.imgContainer}>
           <Image
-            src={ContactImg}
-            alt="ContactImg"
+            src="/contact.png"
+            alt=""
             fill={true}
             className={styles.image}
-            sizes="100%"
-            priority
           />
         </div>
         <form className={styles.form}>
@@ -27,10 +30,10 @@ const Contact = () => {
             cols="30"
             rows="10"
           ></textarea>
-          <Button url="#" text="Send" />
+          <Button url="#" text="Send"/>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

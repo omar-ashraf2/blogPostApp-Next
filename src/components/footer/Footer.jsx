@@ -1,40 +1,16 @@
-import Image from "next/image";
+import React from "react";
 import styles from "./footer.module.css";
-import Link from "next/link";
-
-const socialIcons = [
-  {
-    url: "https://www.Facebook.com",
-    img: "/1.png",
-    alt: "Facebook",
-  },
-  {
-    url: "https://www.Instagram.com",
-    img: "/2.png",
-    alt: "Instagram",
-  },
-  {
-    url: "https://www.x.com",
-    img: "/3.png",
-    alt: "Twitter",
-  },
-  {
-    url: "https://www.Youtube.com",
-    img: "/4.png",
-    alt: "Youtube",
-  },
-];
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className={styles.container}>
-      <p>&copy;2023 Omar Ashraf. All rights reserved.</p>
+      <div>©2023 Lamamia. All rights reserved.</div>
       <div className={styles.social}>
-        {socialIcons.map((icon) => (
-          <Link key={icon.alt} href={icon.url} className={styles.iconLink}>
-            <Image src={icon.img} alt={icon.alt} width={15} height={15} />
-          </Link>
-        ))}
+        <Image src="/1.png" width={15} height={15} className={styles.icon} alt="Lama Dev Facebook Account" />
+        <Image src="/2.png" width={15} height={15} className={styles.icon} alt="Lama Dev" />
+        <Image src="/3.png" width={15} height={15} className={styles.icon} alt="Lama Dev" />
+        <Image src="/4.png" width={15} height={15} className={styles.icon} alt="Lama Dev" />
       </div>
     </div>
   );

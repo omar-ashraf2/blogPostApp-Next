@@ -1,24 +1,23 @@
-import Link from "next/link";
+import React from "react";
 import styles from "./page.module.css";
-import { portfolioItems } from "./[category]/data.js";
+import Link from "next/link";
 
 const Portfolio = () => {
   return (
-    <>
-      <h1 className={styles.selectText}>Choose a gallery</h1>
+    <div className={styles.container}>
+      <h1 className={styles.selectTitle}>Choose a gallery</h1>
       <div className={styles.items}>
-        {portfolioItems.map((item) => (
-          <Link
-            key={item.text}
-            href={item.url}
-            className={styles.item}
-            style={{ backgroundImage: "url(" + item.img + ")" }}
-          >
-            <span className={styles.title}>{item.text}</span>
-          </Link>
-        ))}
+        <Link href="/portfolio/illustrations" className={styles.item}>
+          <span className={styles.title}>Illustrations</span>
+        </Link>
+        <Link href="/portfolio/websites" className={styles.item}>
+          <span className={styles.title}>Websites</span>
+        </Link>
+        <Link href="/portfolio/application" className={styles.item}>
+          <span className={styles.title}>Application</span>
+        </Link>
       </div>
-    </>
+    </div>
   );
 };
 

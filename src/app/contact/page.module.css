@@ -1,3 +1,6 @@
+.container {
+}
+
 .title {
   font-size: 60px;
   margin-bottom: 100px;
@@ -18,7 +21,7 @@
 
 .image {
   object-fit: contain;
-  animation: move 3s infinite ease alternate;
+  /* animation: move 3s infinite ease alternate; */
 }
 
 @keyframes move {
@@ -41,6 +44,7 @@
 .textArea {
   padding: 20px;
   background-color: transparent;
+  border: none;
   outline: none;
   color: #bbb;
   border: 3px solid #bbb;

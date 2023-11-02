@@ -12,6 +12,7 @@ const About = () => {
           fill={true}
           alt=""
           className={styles.img}
+          placeholder="blur"
         />
         <div className={styles.imgText}>
           <h1 className={styles.imgTitle}>Digital Storytellers</h1>

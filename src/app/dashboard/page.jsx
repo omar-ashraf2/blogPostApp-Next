@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const Dashboard = () => {
-
   //OLD WAY TO FETCH DATA
 
   // const [data, setData] = useState([]);
@@ -36,7 +35,7 @@ const Dashboard = () => {
   const session = useSession();
 
   const router = useRouter();
-  
+
   //NEW WAY TO FETCH DATA
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -72,7 +71,7 @@ const Dashboard = () => {
         }),
       });
       mutate();
-      e.target.reset()
+      e.target.reset();
     } catch (err) {
       console.log(err);
     }
@@ -98,15 +97,21 @@ const Dashboard = () => {
             : data?.map((post) => (
                 <div className={styles.post} key={post._id}>
                   <div className={styles.imgContainer}>
-                    <Image src={post.img} alt="" width={200} height={100} />
+                    <Image
+                      src={post.img}
+                      alt=""
+                      width={200}
+                      height={100}
+                      placeholder="blur"
+                    />
                   </div>
                   <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span
+                  <button
                     className={styles.delete}
                     onClick={() => handleDelete(post._id)}
                   >
                     X
-                  </span>
+                  </button>
                 </div>
               ))}
         </div>

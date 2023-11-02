@@ -18,7 +18,7 @@ const getData = (cat) => {
 const Category = ({ params }) => {
   const data = getData(params.category);
   return (
-    <div className={styles.container}>
+    <>
       <h1 className={styles.catTitle}>{params.category}</h1>
       {data.map((item) => (
         <div className={styles.item} key={item.id}>
@@ -30,14 +30,16 @@ const Category = ({ params }) => {
           <div className={styles.imgContainer}>
             <Image
               className={styles.img}
-              fill={true}
               src={item.image}
-              alt=""
+              alt="post"
+              fill
+              sizes="100%"
+              priority
             />
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

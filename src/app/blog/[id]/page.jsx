@@ -41,7 +41,7 @@ const BlogPost = async ({ params }) => {
               alt=""
               width={40}
               height={40}
-              className={styles.avatar}
+              className={styles.avatar}placeholder="blur"
             />
             <span className={styles.username}>{data.username}</span>
           </div>
@@ -52,6 +52,7 @@ const BlogPost = async ({ params }) => {
             alt=""
             fill={true}
             className={styles.image}
+            placeholder="blur"
           />
         </div>
       </div>

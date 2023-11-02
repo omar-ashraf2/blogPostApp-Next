@@ -31,7 +31,8 @@ const Blog = async () => {
               width={400}
               height={250}
               sizes="100%"
-              priority
+              placeholder="blur"
+              blurDataURL={item.img}
               className={styles.image}
             />
           </div>

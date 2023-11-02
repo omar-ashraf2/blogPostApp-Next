@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <Suspense>
+      <Suspense fallback={<p>Loading...</p>}>
         <div className={styles.container}>
           <div className={styles.posts}>
             {isLoading

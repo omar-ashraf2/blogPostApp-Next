@@ -40,7 +40,6 @@ const Login = ({ url }) => {
     <div className={styles.container}>
       <h1 className={styles.title}>{success || "Welcome Back"}</h1>
       <h2 className={styles.subtitle}>Please sign in to see the dashboard.</h2>
-
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
@@ -65,18 +64,18 @@ const Login = ({ url }) => {
       >
         Login with Google
       </button>
-      <span className={styles.or}>- OR -</span>
-      <Link className={styles.link} href="/dashboard/register">
-        Create new account
-      </Link>
-      {/* <button
+      <button
         onClick={() => {
           signIn("github");
         }}
         className={styles.button + " " + styles.github}
       >
         Login with Github
-      </button> */}
+      </button>
+      <span className={styles.or}>- OR -</span>
+      <Link className={styles.link} href="/dashboard/register">
+        Create new account
+      </Link>
     </div>
   );
 };

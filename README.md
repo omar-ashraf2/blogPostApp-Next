@@ -1,4 +1,4 @@
-[Live Demo:](https://blogpostappnextjs.netlify.app/)
+[Live Demo⬅️](https://blogpostappnextjs.netlify.app/)
 
 ## Getting Started
 
